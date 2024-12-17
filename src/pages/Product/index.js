@@ -1,4 +1,4 @@
-import DashboardBox from "./components/dashboardBox";
+
 import { FaCircleUser } from "react-icons/fa6";
 import { ImCart } from "react-icons/im";
 import { AiFillProduct } from "react-icons/ai";
@@ -16,39 +16,24 @@ import { FaEye } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
 import Pagination from '@mui/material/Pagination';
-import Product from "../Product";
+import { Link } from "react-router-dom";
 
 
-const Dashboard = () => {
+
+
+const Product = () => {
 
     const [showby, setshowby] = useState('');
     const [catby, setcatby] = useState('');
+
     return (
         <>
             <div className="right-content w-100">
-                <div className="row dashboardboxwrapperRow">
-                    <div className="col-md-8">
-                        <div className="dashboardboxwrapper d-flex">
-                            <DashboardBox color={["#c012e2", "#eb64fe"]} icon={<FaCircleUser />} />
-                            <DashboardBox color={["#e1950e", "#f3cd29"]} icon={<ImCart />} />
-                            <DashboardBox color={["#1da256", "#48d483"]} icon={<AiFillProduct />} />
-                            <DashboardBox color={["#2c78e5", "#60aff5"]} icon={<MdReviews />} />
-
-                        </div>
-                    </div>
-                    <div className="col-md-4 pl-0">
-                        <div className="box">
-                            <p>hbahjxbh</p>
-                        </div>
-
-                    </div>
+                <div className="card shadow border-0 w-100 flex-row p-4">
+                    <h5 class="mb-0">Product List</h5>
                 </div>
-
-                
-
-
                 <div className="card shadow border-0 p-3 mt-4">
-                    <h3 className="hd">Best Selling Product</h3>
+                    <h3 className="hd">All Products</h3>
 
                     <div className="row cardfilters mt-3">
 
@@ -137,7 +122,7 @@ const Dashboard = () => {
                                     <td>100</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button color="secondary"><FaEye /></Button>
+                                            <Link to="/productview"><Button color="secondary"><FaEye /></Button></Link>
                                             <Button color="primary"><FaPencilAlt /></Button>
                                             <Button color="error"><RiDeleteBinFill /></Button>
                                         </div>
@@ -173,7 +158,7 @@ const Dashboard = () => {
                                     <td>100</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button color="secondary"><FaEye /></Button>
+                                            <Link to="/productview"><Button color="secondary"><FaEye /></Button></Link>
                                             <Button color="primary"><FaPencilAlt /></Button>
                                             <Button color="error"><RiDeleteBinFill /></Button>
                                         </div>
@@ -209,7 +194,7 @@ const Dashboard = () => {
                                     <td>100</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button color="secondary"><FaEye /></Button>
+                                            <Link to="/productview"><Button color="secondary"><FaEye /></Button></Link>
                                             <Button color="primary"><FaPencilAlt /></Button>
                                             <Button color="error"><RiDeleteBinFill /></Button>
                                         </div>
@@ -245,7 +230,7 @@ const Dashboard = () => {
                                     <td>100</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button color="secondary"><FaEye /></Button>
+                                            <Link to="/productview"><Button color="secondary"><FaEye /></Button></Link>
                                             <Button color="primary"><FaPencilAlt /></Button>
                                             <Button color="error"><RiDeleteBinFill /></Button>
                                         </div>
@@ -281,7 +266,7 @@ const Dashboard = () => {
                                     <td>100</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button color="secondary"><FaEye /></Button>
+                                            <Link to="/productview"><Button color="secondary"><FaEye /></Button></Link>
                                             <Button color="primary"><FaPencilAlt /></Button>
                                             <Button color="error"><RiDeleteBinFill /></Button>
                                         </div>
@@ -317,7 +302,7 @@ const Dashboard = () => {
                                     <td>100</td>
                                     <td>
                                         <div className="actions d-flex align-items-center">
-                                            <Button color="secondary"><FaEye /></Button>
+                                            <Link to="/productview"><Button color="secondary"><FaEye /></Button></Link>
                                             <Button color="primary"><FaPencilAlt /></Button>
                                             <Button color="error"><RiDeleteBinFill /></Button>
                                         </div>
@@ -328,17 +313,15 @@ const Dashboard = () => {
                         </table>
                         <div className="d-flex tableFooter">
                             <p>showing <b>12</b> of <b>60</b> results</p>
-                            <Pagination count={10} color="primary" shape="rounded" className="pagination" showFirstButton showLastButton/>
+                            <Pagination count={10} color="primary" shape="rounded" className="pagination" showFirstButton showLastButton />
                         </div>
 
                     </div>
                 </div>
-                
-
             </div>
         </>
     )
 
 }
 
-export default Dashboard;
+export default Product;

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 *{margin: 0px;padding: 0px;}
-body{font-family: "Open Sans", sans-serif !important;background: #ebe9e9 !important;}
+body{font-family: "Open Sans", sans-serif !important;background: #ebe9e9 !important;overflow-x: hidden !important;}
 
 .btn-round{border-radius: 30px !important;}
 
@@ -11,8 +11,13 @@ header{width: 100%;height: 80px;background: #fff;position: fixed;top: 0px;left: 
 header .logo{width: 300px;}
 
 
-
-
+.align-items-center {
+  align-items: center !important;
+}
+.d-flex {
+  display: flex !important
+;
+}
 
 header button.rounded-circle{min-width: 40px !important;width: 40px !important;height: 40px !important;background: #f0f5ff;}
 header button.rounded-circle svg{color: #292929;font-size: 18px;}
@@ -24,9 +29,15 @@ header button.rounded-circle svg{color: #292929;font-size: 18px;}
 
 
 .main .sidebarwrapper{width: 20%;flex: 0 0 20%;transition: all 0.3s ease-in-out;}
+.main .sidebarwrapper.toggle{width: 0%;flex: 0 0 0% !important ;}
 
-.main .sidebarwrapper .sidebar{width: 20%;height: 100vh;max-height: 100vh; position: fixed;top: 80px;left: 0px;background: #fff;overflow-y: scroll;overflow-x: hidden;}
+.main .sidebarwrapper .sidebar{width: 20%;height: 100vh;max-height: 100vh; position: fixed;top: 80px;left: 0px;background: #fff;overflow-y: scroll;overflow-x: hidden;transition: all 0.3s ease-in-out;}
 
+.main .sidebarwrapper.toggle .sidebar{left: -100%;}
+
+
+
+.main .sidebarwrapper .sidebar::-webkit-scrollbar{width: 3px !important;}
 .main .sidebarwrapper .sidebar ul{margin-bottom: 0px;}
 
 .main .sidebarwrapper .sidebar ul li{list-style: none;}
@@ -52,13 +63,14 @@ header button.rounded-circle svg{color: #292929;font-size: 18px;}
 
 
 .logoutwrapper {padding: 0px 25px;}
-.logoutwrapper .logoutbox{width: 100%;height: 100px;padding: 25px;background: #b6f8fd;border-radius: 10px;margin-bottom: 20px;display: flex;align-items: center;justify-content: center;}
+.logoutwrapper .logoutbox{width: 100%;height: 100px;padding: 25px;background: #60aff5;border-radius: 10px;margin-bottom: 20px;display: flex;align-items: center;justify-content: center;}
 
 
-.logoutwrapper .logoutbox button{background: #3f959f;}
+.logoutwrapper .logoutbox button{background: #0e4c82;color: white;}
 
 
-.main .content{width: 80%;flex: 0 0 80%;}
+.main .content{width: 80%;flex: 0 0 80%;transition: all 0.3s ease-in-out ;}
+.main .content.toggle{width: 100%;flex: 0 0 100%;}
 
 .right-content{padding: 100px 30px;}
 
@@ -81,14 +93,69 @@ header button.rounded-circle svg{color: #292929;font-size: 18px;}
 .cardfilters .col-md-3 h4{font-size: 1rem !important;font-weight: 500;text-transform: capitalize;color: #000;}
 
 
+.table-responsive::-webkit-scrollbar-thumb{background-color: #60aff5 !important;}
+
 .table .thead-dark th{background-color: #60aff5 !important;border-color: white;font-size: 12px;}
 .table tbody td{font-size: 13px !important;color: #000;font-weight: 500;}
 
 .table tbody .actions button{min-width: 30px;height: 25px;}
 .table tbody .actions button svg{font-size: 20px !important;}
 
+table.v-align td {
+  vertical-align: middle !important;
+}
+.table td .new, .table td .old {
+  display: block;
+  width: 100%;
+}
+.table td .oldprice,.table td .newprice{display: block !important;width: 100% !important;}
 
+table td .imgWrapper {
+  flex: 0 0 20%;
+  width: 20%;
+}
 
+table td .info {
+  flex: 0 0 65%;
+  width: 65%;
+}
+
+table td .info h6{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;font-size: 14px;font-weight: 500;margin-bottom: 5px;cursor: pointer;}
+
+table td .info p {
+  color: #5e5d72;
+  font-size: 13px;
+  line-height: 18px;
+}
+table td .info p {
+  margin-bottom: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+table.v-align td .productBox {
+  width: 270px;
+}
+body.light p {
+  font-weight: 400 !important;
+}
+
+.tableFooter {
+  padding-bottom: 20px;
+}
+.tableFooter .pagination {
+  margin-left: auto;
+}
+.css-yewtcl-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  color: #fff;
+  background-color: #60aff5 !important;
+}
+
+.tableFooter p {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  margin-bottom: 0 !important;
+}
 
 .signInPage{width: 100%;height: 100vh;position: relative;overflow: hidden;}
 
@@ -161,3 +228,144 @@ header button.rounded-circle svg{color: #292929;font-size: 18px;}
 
 .signInPage .socials li a button{border-radius: 50%;}
 .signInPage .socials li a button:hover{background-color: #aaebef !important;}
+
+
+
+
+.productDetailsSEction .productInfo .row {
+  margin-bottom: 10px !important;
+}
+
+.productDetailsSEction .productInfo .icon {
+  flex: 0 0 28%;
+  width: 28%;
+}
+body.light .productDetailsSEction .productInfo .icon svg {
+  color: #5e5d72 !important;
+}
+.productDetailsSEction .productInfo .icon svg {
+  font-size: 22px;
+}
+.productDetailsSEction .productInfo .name {
+  color: #5e5d72 !important;
+  flex: 0 0 72%;
+  font-size: 15px;
+  font-weight: 600;
+  width: 72%;
+}
+.productDetailsSEction .productInfo .row .col-sm-9 {
+  align-items: center;
+  display: flex
+;
+}
+.productDetailsSEction .productInfo .row .col-sm-9 span {
+  font-size: 15px;
+  opacity: .8;
+  padding-left: 20px;
+}
+
+.sliderSml .slick-slide {
+  padding-right: 10px;
+}
+
+.form .form-group {
+  margin-bottom: 15px;
+}
+.form .form-group input{background: #fafafa;width: 100%;outline: none !important;border: 1px solid rgba(0, 0, 0, 0.1) !important;height: 60px;padding-left: 15px;border-radius: 5px;}
+
+.form .form-group textarea {
+  background: #fafafa;
+  border: 1px solid #0000001a !important;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 60px;
+  outline: none !important;
+  padding-left: 15px;
+  width: 100%;
+  height: 120px;
+  padding-top: 15px;
+}
+
+.imgUploadBox {
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: 100%;
+}
+.imgUploadBox .uploadBox {
+  align-items: center;
+  background: #fafafa;
+  border: 1px dashed #0000004d;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 150px !important;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  transition: all .3s;
+  width: 150px;
+}
+.imgUploadBox .uploadBox .remove {
+  align-items: center;
+  background: #d32f2f;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: -7px;
+  top: -7px;
+  width: 20px;
+  z-index: 100;
+}
+.imgUploadBox .uploadBox .box {
+  border-radius: 7px;
+  height: 150px !important;
+  overflow: hidden;
+  padding: 2px;
+  width: 100%;
+}
+.imgUploadBox .uploadBox .box .lazy-load-image-background {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.imgUploadBox .uploadBox {
+  align-items: center;
+  background: #fafafa;
+  border: 1px dashed #0000004d;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 150px !important;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  transition: all .3s;
+  width: 150px;
+}
+
+.imgUploadBox .uploadBox input {
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.imgUploadBox .uploadBox .info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+.imgUploadBox .uploadBox .info svg {
+  font-size: 50px;
+  opacity: .2;
+}
+.imgUploadBox .uploadBox .info h5 {
+  font-size: 15px;
+  opacity: .5;
+  text-align: center;
+}

@@ -28,10 +28,15 @@ import Logout from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import { useContext } from 'react';
 import {Mycontext} from '../../App';
+import { RiMenuFoldFill } from "react-icons/ri";
+import { RiMenuUnfoldFill } from "react-icons/ri";
+
 
 
 
 const Header = () => {
+
+    
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -54,7 +59,11 @@ const Header = () => {
                         </div>
 
                         <div className="col-sm-3 d-flex align-items-center part2 pl-4">
-                            <Button className="rounded-circle mr-3"><MdOutlineMenuOpen /></Button>
+                            <Button className="rounded-circle mr-3" onClick={()=>context.setIsToggleSidebar(!context.isToggleSidebar)}>
+                                {
+                                    context.isToggleSidebar===false ? <RiMenuFoldFill /> : <RiMenuUnfoldFill />
+                                }
+                            </Button>
                             <SearchBox />
 
                         </div>
